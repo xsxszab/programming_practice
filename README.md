@@ -1,2 +1,4 @@
 # programming_practice
-nothing useful......
+Python,C&C++,Shell,also LaTex.
+
+Just some codes I(freshman in computer science) wrote for practice.
