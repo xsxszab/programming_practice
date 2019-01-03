@@ -1,0 +1,58 @@
+\documentclass{article}
+\title{Newton's method in C}
+\author{Yifei Wang}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    basicstyle=\tt,
+    numbers=left,
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    escapeinside=``,
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=1.5mm,
+    frame=shadowbox,
+    backgroundcolor=\color[RGB]{245,245,244},
+    keywordstyle=\color{blue}\bfseries,
+    identifierstyle=\bf,
+    numberstyle=\color[RGB]{0,192,192},
+    commentstyle=\it\color[RGB]{96,96,96},
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},
+    showstringspaces=false
+}
+\begin{document}
+\maketitle
+\section{ABSTRUCT}
+The overwhelming majority of nonlinear differential equations are not soluble analytically,but in history many methods were found to find the numerical solution of a equation,and Newton's method(also known as the Newton–Raphson method)is one widely used in scientific compution. This article shows an implementation of Newton's method in C.
+\section{INTRODUCTION}
+Newton's method provides a way for finding the real zeros of a function. This algorithm is sometimes called the Newton–Raphson method, named after Sir Isaac Newton and Joseph Raphson.
+The method uses the derivative to find its roots.Importantly,an initial "guess value" for the location of the zero must be made.
+
+\section{MATERIALS AND METHODS}
+Suppose $f(x)$ is differentiable on the interval $(a,b)$ ,The formula for converging on the root can be easily derived.
+Let the current approximation be $x_n$, then get the derivative for better approximation,The equation of the tangent line to the curve $y=f(x)$ at the point $x=x_n$ is $y=f'(x_n)(x-x_n)+f(x_n)$,let $y=0$,and the value $x$ is the next better approximation $x_{n+1}$,i.e. $0=f'(x_n)(x_{n+1}-x_n)+f(x_n)$.
+Solving the equation gives $x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}$,we can iterate it until the error is smaller than the set threshold.
+
+For instance,to solve the function $x^3-4x^2+3x-6=0$,we use the C code below ,using compiler gcc version 5.4.0 on ubuntu 16.04.10.
+\begin{lstlisting}
+#include <stdio.h>
+#include <math.h> 
+int main(void)
+{
+ 	float x,x0,f,f1; 
+ 	x = 2.0;
+ 	threshold=1e-5
+	do{ 
+	       x0=x;
+	       f=x0*x0*x0-4*x0*x0+3*x0-6;
+	       f1=6*x0*x0-8*x0+3;
+	       x=x0-f/f1;       
+	}while(fabs(x-x0)>=threshold);
+	  printf("%f\n",x);
+ 	return 0;
+}
+\end{lstlisting}
+\section{RESULTS}
+After 36 iterations,we get the numerical solution $x=3.628896$,with error smaller than the threshold $10^{-5}$,
+\section{DISSCUSSION}
+The real implementation of Newton's method in scientific computaion is no as simple as this case. It faces challenges like the diffculty in calculating the derivative of the function, the failure of converge to the root , and the      interferes from stationary points,etc.So its real implementation still need improvements.
+\end{document}

@@ -1,0 +1,6 @@
+# C For Practice
+nothing much to say......
+
+This repository is just somewhere I(a newbie) upload my practice codes,so emmm...
+
+So reading these codes is not a wise choice.
