@@ -1,0 +1,7 @@
+(write (atom (cons 1 2)))
+(write " ")
+(write (atom nil))
+(write " ")
+(write (atom "abcdefgh"))
+(write " ")
+(write (atom -))

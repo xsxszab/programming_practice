@@ -1,0 +1,1 @@
+(defvar *value* nil)

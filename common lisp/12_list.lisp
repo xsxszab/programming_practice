@@ -1,0 +1,7 @@
+(cons 'a '(b c d))
+(list 'a 'b)
+(cons 'a (cons 'b nil))
+(car '(a b c d))
+(cdr '(a b c d))
+(third '(a b c d))
+(car (cdr (cdr '(a b c d))))

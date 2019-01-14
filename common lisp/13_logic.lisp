@@ -1,0 +1,7 @@
+(write (listp '(a b c d)))
+(write " ")
+(write (listp 10))
+(write " ")
+(write (null nil))
+(write " ")
+(write (not nil))
