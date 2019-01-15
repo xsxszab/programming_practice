@@ -1,0 +1,7 @@
+(setf arr '(a b c d))
+(write (remove 'a arr))
+(write " ")
+(write arr)
+(write " ")
+(setf arr (remove 'a arr))
+(write arr)
