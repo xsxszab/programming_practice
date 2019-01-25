@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from keras.models import Sequential
 from keras.layers import Dense
+from keras.models import load_model
 
 STEP=1000
 
@@ -44,3 +45,8 @@ plt.scatter(x_val,y_val,color='g')
 plt.plot(x_val,y_pred,color='b')
 
 print(model.summary())
+model.save('model.h5')
+
+del model
+
+model=load_model('./model.h5')
