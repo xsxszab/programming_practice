@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>text</title> 
+</head>
+<body>
+<p id="label"></p>
+<script>
+	var object=
+	{
+		a: 2,
+		b: 4,
+		func: function()
+		{
+			return this.a+this.b;
+		}
+	};
+document.getElementById("label").innerHTML = object.func();
+</script>
+</body>
+</html>
