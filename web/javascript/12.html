@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>text</title> 
+</head>
+<body>
+<p id="1"></p>
+<p id="2"></p>
+<p id="3"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
+<p id="7"></p>
+<p id="8"></p>
+<script>
+document.getElementById("1").innerHTML = typeof 2;
+document.getElementById("2").innerHTML = typeof 12.34;
+document.getElementById("3").innerHTML = typeof 12e4;
+document.getElementById("4").innerHTML = typeof 'hello';
+document.getElementById("5").innerHTML = typeof "world";
+var value1;
+value1=null;
+document.getElementById("6").innerHTML = typeof value1;
+var value2;
+value2=undefined;
+document.getElementById("7").innerHTML = typeof value2;
+document.getElementById("8").innerHTML = typeof {name:'wang', age:18};
+</script>
+</body>
+</html>
+
